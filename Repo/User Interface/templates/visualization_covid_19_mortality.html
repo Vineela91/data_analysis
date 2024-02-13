@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter Data Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+     <style>
+       body {
+         background-image: url("static/images/background.jpg");
+         background-size: cover;
+         background-repeat: no-repeat;
+       }
+     </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Visualization Covid-19 Mortality</h1>
+      <a href="{{ url_for('home') }}" class="btn btn-primary"style="margin-bottom: 10px;">Home</a>
+      <a href="{{ url_for('login') }}" class="btn btn-primary"style="margin-bottom: 10px;">Logout</a>
+      <a href="{{ url_for('welcome') }}" class="btn btn-primary"style="margin-bottom: 10px;">Back</a>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td><img class="img-size" src="{{ url_for('static', filename='images/rolling_death_count1.png') }}"></td>
+          <td><img class="img-size" src="{{ url_for('static', filename='images/rolling_death_count2.png') }}"></td>
+          
+        </tr>
+        <tr>
+          <td><img class="img-size" src="{{ url_for('static', filename='images/rolling_death_count_hist.png') }}"></td>
+          <td><img class="img-size" src="{{ url_for('static', filename='images/rolling_death_count_scatter.png') }}"></td>
+          
+          
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
