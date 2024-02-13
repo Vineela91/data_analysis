@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   
+    <style>
+      body {
+        background-image: url("static/images/background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome, {{ session['username'] }}</h1>
+      <p>What would you like to do today?</p>
+      
+      <form>
+                
+        <input type="text" id="search" placeholder="Search...">
+      </form>
+
+      <div class="button-container">
+        <a href="{{ url_for('filterpageage') }}" class="btn btn-primary" style="margin-bottom: 10px; display: none;" data-search-keywords="claimant count age sex">Visualization claimant count age sex</a>
+        <a href="{{ url_for('filterpageage1') }}" class="btn btn-secondary" style="margin-bottom: 10px; display: none;" data-search-keywords="covid 19 mortality">Visualization Covid - 19 Mortality</a>
+        <a href="{{ url_for('filterpageage2') }}" class="btn btn-secondary" style="margin-bottom: 10px; display: none;" data-search-keywords="strategic cordon survey">Visualization Strategic Cordon Survey</a>
+        <a href="{{ url_for('filterpage' )}}" class="btn btn-secondary" style="margin-bottom: 10px; display: none;" data-search-keywords="twitter 5k data visualization sentiment analysis">Twitter  data visualization and sentiment analysis</a>
+        
+      </div>
+      <p>     </p>
+      <a href="{{ url_for('home') }}" class="btn btn-primary"style="margin-bottom: 10px;">Home</a>
+      <a href="{{ url_for('login') }}" class="btn btn-primary"style="margin-bottom: 10px;">Logout</a>
+      
+    </div>
+
+    <script>
+      const searchInput = document.getElementById('search');
+      const buttons = document.querySelectorAll('.button-container a');
+
+      searchInput.addEventListener('input', () => {
+        const searchValue = searchInput.value.toLowerCase().trim();
+
+        buttons.forEach((button) => {
+          const keywords = button.getAttribute('data-search-keywords').toLowerCase();
+
+          if (keywords.includes(searchValue)) {
+            button.style.display = 'block';
+          } else {
+            button.style.display = 'none';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
