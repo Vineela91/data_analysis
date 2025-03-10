@@ -8,9 +8,15 @@ To present these insights interactively, I developed a web dashboard using Flask
 This repository includes all relevant code for data collection, processing, sentiment analysis, and visualization. To run the project, clone the repository, install dependencies, and start the Flask app locally. Future improvements can focus on enhancing the user interface, expanding data sources, and refining sentiment classification for more accurate insights
 
 📌 **Technologies Used**
+
 Python – Data collection, cleaning, and analysis
+
 Python Libraries – Pandas, NumPy, Matplotlib, Seaborn for data visualization
+
 Natural Language Processing (NLP) – NLTK, TextBlob for sentiment analysis
+
 Machine Learning – Regression models, Random Forest, SVM, Naive Bayes
+
 Flask – Backend development for the web dashboard
+
 HTML, CSS – Frontend for interactive visualizations
